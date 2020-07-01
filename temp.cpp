@@ -32,3 +32,27 @@ typedef long long int ll;
 #define ss 			second 
 #define endl        '\n'
 const ll INF=1e18
+--------------------------------------------------------------------------------------------------------------------------------------------
+ #pragma GCC optimizer ("O3")
+#pragma GCC target ("sse4")
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define MAX(x,y) ((x)>(y)?(x):(y))
+#define MIN(x,y) ((x)<(y)?(x):(y))
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+typedef long long int ll;
+#define mp(a,b) make_pair(a,b)
+#define pii pair<ll, ll>
+#define vl vector<int>
+#define vll vector<vl>
+#define push_back pb
+#define rep(i,a,b)  for(ll i=a;i<b;i++)
+int main(){
+    fastio;
+    ll t,sol;
+    cin>>t;
+    while(t--) {
+    
+    }
+}
