@@ -1,0 +1,78 @@
+#pragma GCC optimizer ("O3")
+#pragma GCC target ("sse4")
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+#define MAX(x,y) ((x)>(y)?(x):(y))
+#define MIN(x,y) ((x)<(y)?(x):(y))
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
+typedef long long int ll;
+#define mp(a,b) make_pair(a,b)
+#define pii pair<ll, ll>
+#define vl vector<int>
+#define vll vector<vl>
+#define push_back pb
+#define w(t) int t;cin>>t;while(t--)
+#define rep(i,a,b)  for(ll i=a;i<b;i++)
+int main(){
+    fastio;
+    string s;cin>>s;
+    
+    int n = s.length();
+    int max_len=0;
+    pair<int, int> pos;
+    rep(i,0,n*2){
+        int len=0;
+        int l,r,center;
+        if(i%2==0){
+            l=0;
+            r=0;
+            center=i/2;
+            while(1){
+                l--;
+                r++;
+                if((center+r)>n || (center+l)<0|| s[center+l] != s[center+r]){
+                    l++;
+                    r--;
+                    len=r-l+1;
+                    break;
+                }
+                len=r-l+1;
+            }
+        }
+        else{
+            center = i/2;
+            l=0;
+            r=1;
+            while(1){
+                l--;
+                r++;
+                if((center+r-1)>n || (center+l-1)<0 || s[center+l] != s[center+r]){
+                    l++;
+                    r--;
+                    len=r-l+1;
+                    break;
+                }
+                len=r-l+1;
+            }
+        }
+        
+        
+        if(i%2==0) {
+            if(max_len<len && (center+l==0 || center+r==n-1)){
+                max_len = len;
+                pos = mp(center+l,center+r);
+            }
+            //cout<<center+l<<" "<<center+r<<" "<<center<<" "<<len<<endl;
+        }
+    
+        else {
+            if(max_len<len && (center+l==0 || center+r==n-1)){
+                max_len = len;
+                pos = mp(center+l,center+r);
+            }
+            //cout<<center+l<<" "<<center+r<<" "<<center<<" "<<len<<endl;
+        }
+    }
+    cout<<max_len<<" "<<pos.first<<" "<<pos.second;
+}   
