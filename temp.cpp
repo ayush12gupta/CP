@@ -43,10 +43,11 @@ typedef long long ll;
 #define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 typedef long long int ll;
 #define mp(a,b) make_pair(a,b)
-#define pii pair<ll, ll>
-#define vl vector<int>
+#define pll pair<ll, ll>
+#define vi vector<int>
+#define vl vector<ll>
 #define vll vector<vl>
-#define push_back pb
+#define pb push_back
 #define w(t) int t;cin>>t;while(t--)
 #define rep(i,a,b)  for(ll i=a;i<b;i++)
 int main(){
