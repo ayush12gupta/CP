@@ -1,0 +1,39 @@
+----------------- Breadth First Search ------------------------ 
+void bfs(int s)
+{
+    level[s]=1;
+    vis[s]=true;
+    queue<int> q;
+    q.push(s);
+    while(!q.empty())
+    {
+        int v=q.front();
+        q.pop();
+        for(int u:adj[v])
+        {
+            if(!vis[u])
+            {
+                vis[u]=true;
+                q.push(u);
+                level[u]=level[v]+1;
+                // else level[u]=level[v];
+            }
+        }
+    }
+}
+
+----------------------- Depth First Scearch -----------------------
+
+void dfs(int s)
+{
+    vis[s]=true;
+    for(int u:adj[s])
+    {
+        if(!vis[u])
+        {
+            dfs(u);
+            // level[u]=level[s]+1;
+            child[s]+=child[u];
+        }
+    }
+}
