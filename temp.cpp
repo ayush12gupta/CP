@@ -49,6 +49,7 @@ typedef long long int ll;
 #define vll vector<vl>
 #define pb push_back
 #define w(t) int t;cin>>t;while(t--)
+#define inp(a,n) vl a(n);rep(i,0,n) cin>>a[i]; 
 #define rep(i,a,b)  for(ll i=a;i<b;i++)
 int main(){
     fastio;
