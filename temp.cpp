@@ -33,7 +33,7 @@ typedef long long int ll;
 #define endl        '\n'
 const ll INF=1e18
 --------------------------------------------------------------------------------------------------------------------------------------------
- #pragma GCC optimizer ("O3")
+#pragma GCC optimizer ("O3")
 #pragma GCC target ("sse4")
 #include <bits/stdc++.h>
 using namespace std;
@@ -51,6 +51,34 @@ typedef long long int ll;
 #define w(t) int t;cin>>t;while(t--)
 #define inp(a,n) vl a(n);rep(i,0,n) cin>>a[i]; 
 #define rep(i,a,b)  for(ll i=a;i<b;i++)
+bool isPrime(ll n)
+{
+    // Corner cases
+    if (n <= 1)
+        return false;
+    if (n <= 3)
+        return true;
+  
+    // This is checked so that we can skip
+    // middle five numbers in below loop
+    if (n % 2 == 0 || n % 3 == 0)
+        return false;
+  
+    for (int i = 5; i * i <= n; i = i + 6)
+        if (n % i == 0 || n % (i + 2) == 0)
+            return false;
+  
+    return true;
+}
+
+ll gcd(ll a, ll b)
+{
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+     
+}
+
 int main(){
     fastio;
     w(t) {
